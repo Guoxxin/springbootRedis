@@ -1,0 +1,35 @@
+#开发环境
+server:
+  port: 8090
+tomcat:
+  max-http-header-size: 8192
+spring:
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://47.101.184.147:3306/vueblog?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 3600ms #超时时间
+    jedis:
+      pool:
+        max-active: 8 #最大连接数
+        max-idle: 8 #最大空闲连接 默认8
+        max-wait: -1ms #默认-1 最大连接阻塞等待时间
+        min-idle: 0 #最小空闲连接
+
+  upload:
+    uploadPath: C:\Users\TJ\IdeaProjects\demo\src\main\resources\static\upload  #保存文件的本地路径
+    thumbDir: thumbs       #缩略图、裁剪图等存放的文件夹
+    imageHeight: 100      #默认缩略后的高度
+    imageFormat: jpg       #统一保存格式
+    imageSize: 5mb    #图片最大大小
